@@ -102,26 +102,34 @@ Record whether the primary log source is `/var/log/auth.log`, the systemd journa
 
 ## Step 2: Review Recent Login Activity
 
-Review recorded login sessions:
-
-```bash
-last
-lastlog
-```
-
-Review users who are currently signed in:
+Start with these commands to review users who are currently signed in. They are safe defaults on Ubuntu and Debian:
 
 ```bash
 who
 w
 ```
 
+### Compatibility Note
+
+On some newer systems, including Ubuntu 26.04 ARM64, `last` and the older `lastlog` command may not be installed by default. If you want to review recorded login history, you can optionally install the package suggested by Ubuntu and then run `last`:
+
+```bash
+sudo apt install wtmpdb
+last
+```
+
+On systems that provide it, use `lastlog2` instead of the older `lastlog` command:
+
+```bash
+lastlog2
+```
+
 Expected observations:
 
-- `last` shows recorded login and logout history, including reboots on many systems.
-- `lastlog` shows the most recent recorded login for local accounts; many service accounts may show that they have never logged in.
 - `who` shows current login sessions.
 - `w` adds session activity and basic system load information.
+- `last` shows recorded login and logout history, including reboots on many systems.
+- `lastlog2` shows the most recent recorded login for local accounts; many service accounts may show that they have never logged in.
 - A command may show little or no output on a newly installed VM.
 
 Record expected usernames, session times, and terminal or source fields that are relevant to the lab. Do not assume that every reboot entry or account with no login is suspicious.
@@ -145,7 +153,8 @@ Expected observations:
 - There may be no matching entries on a new or lightly used VM.
 - A failed entry may identify a time, account name, authentication component, and source context.
 - A single known typing mistake has different significance from repeated failures involving unfamiliar users or times.
-- The word `failed` can appear in unrelated system messages, so read the full entry before classifying it as an authentication failure.
+- `failed` is a broad search term and can return general service failures or other non-login messages.
+- Read the source or service named in each full log line before classifying it as a failed login attempt.
 
 Record the number and timing of relevant failures, the usernames involved, and whether the activity has a known explanation. Do not reproduce failed login activity.
 
