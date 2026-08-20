@@ -39,27 +39,19 @@ The first version focuses on:
 
 ARM-SecNet V1 currently includes:
 
-- UTM setup guide
+- UTM setup guide for Apple Silicon macOS
 - ARM64 Linux VM setup guide
-- one concrete lab topology
-- safety rules
+- one concrete V1 lab topology
+- safety rules for defensive lab work
 - Lab 01: Linux baseline investigation
-- Lab 02: Authentication log analysis
-- validation script
+- Lab 02: authentication log analysis
+- lecturer summary
+- V1 test notes
+- screenshot evidence from a real ARM64 VM test
+- V1 demo script
+- validation script with V1 documentation and evidence checks
 
 ## Quick Navigation
-
-### Testing Evidence
-
-- [V1 Test Notes](docs/v1-test-notes.md)
-- [V1 Screenshot Evidence](docs/evidence/v1-screenshots.md)
-
-### Demo
-
-- [V1 Demo Script](docs/demo/v1-demo-script.md)
-
-### Testing Evidence
-
 
 ### Core Documentation
 
@@ -77,6 +69,13 @@ ARM-SecNet V1 currently includes:
 - [Lab 01 — Linux Baseline Investigation](docs/labs/lab-01-linux-baseline.md)
 - [Lab 02 — Authentication Log Analysis](docs/labs/lab-02-auth-log-analysis.md)
 
+### Review, Evidence, and Demo
+
+- [Lecturer Summary](docs/lecturer-summary.md)
+- [V1 Test Notes](docs/v1-test-notes.md)
+- [V1 Screenshot Evidence](docs/evidence/v1-screenshots.md)
+- [V1 Demo Script](docs/demo/v1-demo-script.md)
+
 ### Validation
 
 Run the validation script:
@@ -88,11 +87,11 @@ bash scripts/validate-lab.sh
 Expected result:
 
 ```text
-Passed:  10
+Passed:  19
 Warnings: 0
 Failed:  0
 
-Foundation validation passed.
+ARM-SecNet V1 validation passed.
 ```
 
 ## V1 Lab Topology
@@ -148,6 +147,18 @@ arm-secnet/
 │   ├── overview.md
 │   ├── safety.md
 │   ├── topology.md
+│   ├── lecturer-summary.md
+│   ├── v1-test-notes.md
+│   ├── demo/
+│   │   └── v1-demo-script.md
+│   ├── evidence/
+│   │   ├── v1-screenshots.md
+│   │   └── screenshots/
+│   │       ├── 01-arm64-hostnamectl.png
+│   │       ├── 02-network-shared-nat.png
+│   │       ├── 03-lab01-system-baseline.png
+│   │       ├── 04-lab01-users-processes.png
+│   │       └── 05-auth-log-sudo-activity.png
 │   ├── setup/
 │   │   ├── macos-utm-setup.md
 │   │   └── arm64-linux-vm-setup.md
