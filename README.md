@@ -235,9 +235,9 @@ docs/labs/lab-02-auth-log-analysis.md
 
 ## Project Direction
 
-ARM-SecNet will stay small and practical in V1.
+ARM-SecNet will stay small, practical, and defensive.
 
-The goal is to finish two complete labs instead of creating many unfinished sections. Later versions may add process monitoring, network visibility, firewall basics, packet capture basics, and SentinelLite AI integration documentation.
+The V1 goal is to provide a complete foundation with setup guides, two tested labs, evidence, validation, and a demo flow. Later versions can add more advanced labs only after the current documentation and learning experience stay stable.
 
 ## Future Ideas
 
@@ -247,9 +247,9 @@ Possible future improvements include:
 - network visibility lab
 - firewall basics lab
 - packet capture basics
+- cleaner Ubuntu Server ARM64 test evidence
+- learner worksheet and findings report templates
 - validation improvements
-- screenshots and demo evidence
-- lecturer-facing summary document
 - SentinelLite AI integration guide
 
 These are intentionally delayed until the V1 documentation and lab experience are stable.
