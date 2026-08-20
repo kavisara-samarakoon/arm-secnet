@@ -56,19 +56,23 @@ ARM-SecNet is not:
 
 ## Version 1 Focus
 
-Version 1 is intentionally small.
+Version 1 is intentionally small, practical, and defensive.
 
-The goal is to complete two strong labs instead of many unfinished labs.
+The goal is to complete a clean foundation with two tested labs instead of creating many unfinished sections.
 
 V1 includes:
 
-1. UTM setup guide
+1. UTM setup guide for Apple Silicon macOS
 2. ARM64 Linux VM setup guide
 3. One concrete lab topology
 4. Safety rules
 5. Lab 01: Linux baseline investigation
-6. Lab 02: Authentication log analysis
-7. Validation checklist or script
+6. Lab 02: authentication log analysis
+7. Lecturer summary
+8. V1 test notes
+9. Screenshot evidence from a real ARM64 VM test
+10. V1 demo script
+11. Validation script for V1 documentation and evidence
 
 ## Learning Goals
 
