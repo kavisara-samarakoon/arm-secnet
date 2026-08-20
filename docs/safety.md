@@ -15,6 +15,7 @@ ARM-SecNet may be used for:
 - practicing defensive investigation
 - writing security findings reports
 - testing inside an isolated local lab environment
+- documenting lab evidence safely
 
 ## Not Allowed
 
@@ -44,3 +45,21 @@ UTM Shared/NAT Network
         ↓
 ARM64 Linux Security VM
 ```
+
+For V1, UTM Shared/NAT networking is recommended because it keeps the lab simple and reduces unnecessary exposure to the wider network.
+
+## Evidence and Privacy
+
+When collecting screenshots, logs, or test notes:
+
+- avoid exposing passwords, tokens, private keys, or real credentials
+- avoid publishing sensitive personal information
+- review screenshots before uploading them to a public repository
+- use lab-generated data where possible
+- clearly separate lab evidence from real production system data
+
+## If Unsure
+
+If an activity could affect a system that is not owned, authorized, or clearly part of the local lab, stop and do not continue.
+
+ARM-SecNet should remain a safe defensive learning project.
