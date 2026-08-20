@@ -33,7 +33,7 @@ The first version focuses on:
 - Apple Silicon Mac users
 - ARM64 Linux learners
 - Beginner Blue Team / SOC learners
-- Small cybersecurity clubs and lab teams
+- Individual learners and small cybersecurity clubs
 
 ## Version 1 MVP
 
@@ -237,7 +237,7 @@ docs/labs/lab-02-auth-log-analysis.md
 
 ARM-SecNet will stay small, practical, and defensive.
 
-The V1 goal is to provide a complete foundation with setup guides, two tested labs, evidence, validation, and a demo flow. Later versions can add more advanced labs only after the current documentation and learning experience stay stable.
+V1 provides a complete foundation with setup guides, two tested labs, evidence, validation, and a demo flow. Later versions can add more advanced labs only after the current documentation and learning experience stay stable.
 
 ## Future Ideas
 

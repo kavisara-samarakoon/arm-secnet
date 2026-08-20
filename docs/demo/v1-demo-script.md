@@ -18,7 +18,7 @@ The demo should prove that:
 
 ARM-SecNet is an ARM64-first defensive cybersecurity and networking lab toolkit.
 
-It is designed mainly for students and Apple Silicon users who want to build a safe cybersecurity lab using macOS, UTM, Ubuntu ARM64, Linux security investigation commands, authentication log analysis, and evidence collection.
+It is designed mainly for students and Apple Silicon users who want to build a safe cybersecurity lab using macOS, UTM, an ARM64 Linux VM, Linux security investigation commands, authentication log analysis, and evidence collection.
 
 This project does not focus on attacking real systems. It focuses on defensive learning inside a local lab environment.
 
@@ -69,7 +69,7 @@ Run the validation script:
 
 Expected result:
 
-    Passed:  18
+    Passed:  19
     Warnings: 0
     Failed:  0
 
@@ -99,7 +99,7 @@ Explain the V1 topology:
 
     Apple Silicon Mac
     -> UTM
-    -> Ubuntu ARM64 VM
+    -> ARM64 Linux VM
     -> defensive Linux and network investigation labs
 
 Mention that V1 uses UTM Shared/NAT networking for safety and simplicity.
@@ -165,7 +165,7 @@ Explain that the validation script checks whether all required V1 files and evid
 
 ARM-SecNet is a defensive cybersecurity and networking lab toolkit designed for ARM64 systems, especially Apple Silicon Macs.
 
-The main purpose is to help students safely set up an Ubuntu ARM64 lab in UTM and complete practical defensive security labs.
+The main purpose is to help students safely set up an ARM64 Linux lab in UTM and complete practical defensive security labs.
 
 In V1, I focused on building a clean foundation instead of adding too many advanced features. The project includes setup guides, safety rules, topology, two practical labs, test notes, screenshot evidence, and a validation script.
 
@@ -179,9 +179,9 @@ Current limitations:
 
 - only two labs are included
 - the project is documentation-focused
-- there is no multi-VM lab yet
-- there is no packet capture lab yet
-- SentinelLite AI is not integrated yet
+- V1 uses one ARM64 Linux VM
+- V1 does not include a packet capture lab
+- SentinelLite AI is outside the V1 scope
 - the current screenshots come from one tested Ubuntu ARM64 VM
 
 These limitations are acceptable for V1 because the goal was to build a safe and tested foundation first.

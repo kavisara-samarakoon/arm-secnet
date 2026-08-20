@@ -26,7 +26,7 @@ Recommended host environment:
 | Component | Recommended |
 |---|---|
 | Device | Apple Silicon Mac |
-| Processor | M1, M2, M3, or newer |
+| Processor | M1 or newer |
 | RAM | 8 GB minimum, 16 GB recommended |
 | Storage | At least 30 GB free |
 | Virtualization Tool | UTM |
@@ -36,13 +36,7 @@ The current ARM-SecNet V1 design uses one ARM64 Linux VM.
 
 ## Download UTM
 
-Download UTM from the official UTM website:
-
-```text
-https://mac.getutm.app/
-```
-
-You can also install UTM from the Mac App Store, but the direct website version is commonly used for student labs.
+Download UTM from the [official UTM website](https://mac.getutm.app/) or the Mac App Store. Either version is suitable for this lab; the App Store version provides automatic updates.
 
 ## Install UTM
 
@@ -147,8 +141,4 @@ ARM-SecNet V1 is designed for local defensive learning only.
 
 ## Next Step
 
-After UTM is installed and ready, continue to:
-
-```text
-docs/setup/arm64-linux-vm-setup.md
-```
+After UTM is installed and ready, continue to the [ARM64 Linux VM Setup Guide](arm64-linux-vm-setup.md).

@@ -29,7 +29,9 @@ Kavisara Samarakoon
 The ARM-SecNet validation script passed successfully.
 
 ```text
-Passed: 10
+Passed:  19
 Warnings: 0
-Failed: 0
-Foundation validation passed.
+Failed:  0
+
+ARM-SecNet V1 validation passed.
+```

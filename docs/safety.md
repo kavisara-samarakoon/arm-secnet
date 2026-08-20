@@ -14,7 +14,7 @@ ARM-SecNet may be used for:
 - reviewing authentication logs
 - practicing defensive investigation
 - writing security findings reports
-- testing inside an isolated local lab environment
+- testing inside a controlled local lab environment
 - documenting lab evidence safely
 
 ## Not Allowed

@@ -119,4 +119,4 @@ This topology was chosen because it is:
 - easier to document and validate
 - strong enough for a V1 lab foundation
 
-ARM-SecNet starts with this simple topology so learners can focus on understanding the system before moving into more advanced network security labs.
+This simple topology lets learners focus on understanding the V1 system and its defensive investigation tasks.

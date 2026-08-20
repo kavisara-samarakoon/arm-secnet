@@ -31,12 +31,12 @@ Students using Apple Silicon Macs often face ARM64 compatibility issues when try
 
 ARM-SecNet addresses this problem by providing a focused ARM64-first lab toolkit for Apple Silicon users.
 
-## Proposed Solution
+## Solution
 
 ARM-SecNet provides a structured defensive lab environment using:
 
 - UTM virtualization
-- ARM64 Linux virtual machines
+- one ARM64 Linux virtual machine
 - Shared/NAT networking
 - clear setup guides
 - safe lab exercises
@@ -58,9 +58,13 @@ ARM-SecNet V1 includes:
 - safety rules
 - Lab 01: Linux baseline investigation
 - Lab 02: Authentication log analysis
+- lecturer summary
+- V1 test notes
+- screenshot evidence from a real ARM64 VM test
+- V1 demo script
 - validation script
 
-The goal is to complete two strong labs instead of creating many unfinished lab sections.
+V1 provides two complete labs instead of many unfinished lab sections.
 
 ## V1 Topology
 
@@ -78,3 +82,4 @@ ARM64 Linux Security VM
         ├── open port/service checks
         ├── authentication log analysis
         └── basic security findings report
+```

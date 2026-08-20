@@ -354,8 +354,4 @@ Package versions, process names, and service availability can differ from x86-fo
 
 Save the completed findings report as the known baseline for this VM. Keep the evidence with the lab notes so it can be compared with future observations.
 
-Continue with:
-
-```text
-docs/labs/lab-02-auth-log-analysis.md
-```
+Continue with [Lab 02 — Authentication Log Analysis](lab-02-auth-log-analysis.md).

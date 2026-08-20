@@ -111,14 +111,13 @@ w
 
 ### Compatibility Note
 
-On some newer systems, including Ubuntu 26.04 ARM64, `last` and the older `lastlog` command may not be installed by default. If you want to review recorded login history, you can optionally install the package suggested by Ubuntu and then run `last`:
+On some newer systems, including Ubuntu 26.04 ARM64, `last` and the older `lastlog` command may not be installed by default. If `last` is available, run:
 
 ```bash
-sudo apt install wtmpdb
 last
 ```
 
-On systems that provide it, use `lastlog2` instead of the older `lastlog` command:
+If it is not available, record that limitation and continue with `who`, `w`, and the available authentication log. On systems that provide it, use `lastlog2` instead of the older `lastlog` command:
 
 ```bash
 lastlog2
@@ -172,7 +171,7 @@ If `/var/log/auth.log` is unavailable, review the SSH journal:
 sudo journalctl -u ssh
 ```
 
-Also compare the results with:
+If `last` was available in Step 2, compare the results with:
 
 ```bash
 last
@@ -209,6 +208,8 @@ Expected observations:
 - A search can include messages that mention `sudo` without representing a completed administrative action.
 
 Compare the recorded user, time, and command with authorized lab activity. Be careful when copying evidence because a command line could contain private paths or other sensitive values.
+
+The review commands that use `sudo` may create new `sudo` log entries. Use their timestamps and command fields to identify and label this expected evidence-collection activity.
 
 ## Step 6: Review User Accounts
 

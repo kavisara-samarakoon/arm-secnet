@@ -27,8 +27,8 @@ ARM-SecNet provides a structured lab toolkit that includes:
 - ARM64 Linux VM setup guidance
 - a clear defensive lab topology
 - safety rules
-- baseline investigation labs
-- authentication log analysis labs
+- a baseline investigation lab
+- an authentication log analysis lab
 - validation checks
 - documentation for students and lecturers
 
@@ -58,7 +58,7 @@ ARM-SecNet is not:
 
 Version 1 is intentionally small, practical, and defensive.
 
-The goal is to complete a clean foundation with two tested labs instead of creating many unfinished sections.
+V1 provides a clean foundation with two tested labs instead of many unfinished sections.
 
 V1 includes:
 

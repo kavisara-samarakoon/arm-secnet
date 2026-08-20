@@ -273,8 +273,4 @@ The ARM64 Linux Security VM is ready when:
 - the VM has an IP address, a default route, and basic internet access
 - the lab user and clean recovery point are ready
 
-Continue with the ARM-SecNet V1 Linux baseline investigation:
-
-```text
-docs/labs/lab-01-linux-baseline.md
-```
+Continue with [Lab 01 — Linux Baseline Investigation](../labs/lab-01-linux-baseline.md).
