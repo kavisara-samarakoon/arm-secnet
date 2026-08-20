@@ -70,6 +70,7 @@ echo
 check_required_file "docs/lecturer-summary.md"
 check_required_file "docs/v1-test-notes.md"
 check_required_file "docs/evidence/v1-screenshots.md"
+check_required_file "docs/demo/v1-demo-script.md"
 
 echo
 echo "Screenshot files:"

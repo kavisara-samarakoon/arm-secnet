@@ -54,6 +54,10 @@ ARM-SecNet V1 currently includes:
 - [V1 Test Notes](docs/v1-test-notes.md)
 - [V1 Screenshot Evidence](docs/evidence/v1-screenshots.md)
 
+### Demo
+
+- [V1 Demo Script](docs/demo/v1-demo-script.md)
+
 ### Testing Evidence
 
 
