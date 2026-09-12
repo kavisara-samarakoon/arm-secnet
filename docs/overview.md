@@ -89,8 +89,9 @@ It provides no production security protection or real AI/LLM capability.
 Use SentinelLite source from `main`. Its dashboard command is a development-source addition
 after the current published v1.1.0-beta pre-release and is absent from that release's wheel.
 No SentinelLite v1.2 release or ARM-SecNet V1.1 publication is claimed. The V1.0 docs MVP
-remains the two tested labs listed above; [Lab 03 evidence](evidence/v1.1-sentinellite-dashboard.md)
-and VM validation are planned separately.
+remains the two tested labs listed above. [Lab 03 runtime evidence](evidence/v1.1-sentinellite-dashboard.md)
+is now recorded for one Ubuntu 26.04 LTS aarch64 VM. Validation is limited to that VM and
+the recorded SentinelLite source commit; it does not establish universal ARM64 compatibility.
 
 ## Learning Goals
 

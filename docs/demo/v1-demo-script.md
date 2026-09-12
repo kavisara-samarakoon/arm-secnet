@@ -69,15 +69,15 @@ Run the validation script:
 
 Expected result:
 
-    Passed:  21
+    Passed:  29
     Warnings: 0
     Failed:  0
 
-    ARM-SecNet documentation validation passed.
+    ARM-SecNet documentation and evidence validation passed.
 
-This is the current documentation-branch result: 19 original V1 checks plus the new lab
-guide and evidence plan. The V1.0 tag's 19-check result and documentation MVP claim remain
-unchanged. Planned Lab 03 screenshots are not required by this file-presence check.
+This is the current documentation/evidence result: 19 original V1 checks, the Lab 03 guide
+and runtime record, and eight Lab 03 screenshots. The V1.0 tag's 19-check result and
+documentation MVP claim remain unchanged. File-presence checks do not rerun the VM workflow.
 
 ## 6. Suggested Demo Flow
 
@@ -164,7 +164,7 @@ Run:
     bash scripts/validate-lab.sh
 
 Explain that the validation script checks whether required V1 files and evidence files,
-plus the V1.1 lab guide and evidence plan, exist. It does not run SentinelLite or validate
+plus the V1.1 lab guide, runtime record and eight screenshots, exist. It does not run SentinelLite or validate
 the new VM workflow.
 
 ## 7. Short Explanation to Say During Demo
@@ -202,7 +202,7 @@ Possible future improvements:
 - test on a cleaner minimal Ubuntu Server ARM64 VM
 - add more screenshot evidence
 - add learner worksheets and answer templates
-- complete VM validation and reviewed evidence for the optional V1.1 SentinelLite lab below
+- add repeat VM validation beyond the one recorded V1.1 SentinelLite lab run below
 
 ## 10. Demo Closing Statement
 
@@ -214,8 +214,9 @@ The project is useful for my cybersecurity and networking learning path, and it 
 
 Keep the V1.0 demonstration above as the documentation MVP. Then show
 [Lab 03 — SentinelLite AI Local CLI and Static Dashboard](../labs/lab-03-sentinellite-dashboard.md)
-as a V1.1 documentation addition with [planned evidence](../evidence/v1.1-sentinellite-dashboard.md).
-This does not announce an ARM-SecNet V1.1 release or a completed Lab 03 VM test.
+as a V1.1 documentation addition with [recorded runtime evidence](../evidence/v1.1-sentinellite-dashboard.md)
+from one Ubuntu ARM64 VM. This does not announce an ARM-SecNet V1.1 release or establish
+universal ARM64 compatibility.
 
 Explain the relationship: ARM-SecNet provides the ARM64 lab VM; SentinelLite AI supplies
 the optional local defensive CLI. They remain separate repositories with no runtime dependency.
@@ -235,11 +236,12 @@ sentinellite reports list
 
 Review the JSON path printed by demo with `sentinellite reports show`, then open
 `reports/dashboard.html` manually using the local browser. Capture source provenance,
-command results and the HTML view according to the evidence plan. Use the cleanup commands
+command results and the HTML view using the recorded evidence as a reference. Use the cleanup commands
 in Lab 03 after saving the intended evidence.
 
 Say explicitly that the demo uses synthetic data only and the dashboard reads existing
 local JSON reports. There is no server, network activity, live monitoring, scanning,
 exploitation, automatic remediation or real AI/LLM execution. This illustrates local lab
-usability and report review, not production security protection. Until the VM run is
-recorded, present the steps as planned rather than completed.
+usability and report review, not production security protection. Present the recorded run
+as validation of that specific Ubuntu ARM64 VM and source commit. Additional runs require
+their own recorded evidence.
