@@ -64,7 +64,9 @@ is static local HTML with no server, network requests or live monitoring.
 
 This is V1.1 documentation work, not a published ARM-SecNet V1.1 release. The V1.0
 documentation MVP and its two tested labs remain unchanged. Lab 03 VM validation and
-[dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) are planned, not completed.
+[dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) are now recorded for one
+Ubuntu 26.04 LTS aarch64 VM. This does not establish universal ARM64 compatibility or
+production security protection.
 
 ## Quick Navigation
 
@@ -87,7 +89,7 @@ documentation MVP and its two tested labs remain unchanged. Lab 03 VM validation
 ### V1.1 Optional Lab Documentation
 
 - [Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
-- [Planned SentinelLite Dashboard Evidence](docs/evidence/v1.1-sentinellite-dashboard.md)
+- [Recorded SentinelLite Dashboard Evidence](docs/evidence/v1.1-sentinellite-dashboard.md)
 
 ### Review, Evidence, and Demo
 
@@ -107,17 +109,17 @@ bash scripts/validate-lab.sh
 Expected result:
 
 ```text
-Passed:  21
+Passed:  29
 Warnings: 0
 Failed:  0
 
-ARM-SecNet documentation validation passed.
+ARM-SecNet documentation and evidence validation passed.
 ```
 
-The current script checks the 19 original V1 files and screenshots plus two V1.1
-documentation files. It does not install or run SentinelLite, require planned Lab 03
-screenshots, or establish VM runtime validation. The V1.0 tag's 19-check result remains
-historical evidence.
+The current script checks the 19 original V1 files and screenshots, two V1.1 documentation
+files, and eight recorded Lab 03 screenshots. These are documentation/evidence presence
+checks, not product validation or a fresh VM runtime test. The V1.0 tag's 19-check result
+remains historical evidence.
 
 ## V1 Lab Topology
 
@@ -277,7 +279,7 @@ Possible future improvements include:
 - cleaner Ubuntu Server ARM64 test evidence
 - learner worksheet and findings report templates
 - validation improvements
-- completed VM validation and reviewed evidence for the optional SentinelLite dashboard lab
+- additional VM runs and reviewed evidence beyond the one recorded SentinelLite dashboard run
 
 These are intentionally delayed until the V1 documentation and lab experience are stable.
 

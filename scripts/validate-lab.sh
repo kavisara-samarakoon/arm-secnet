@@ -30,8 +30,8 @@ check_optional_file() {
   fi
 }
 
-echo "ARM-SecNet Validation Check"
-echo "==========================="
+echo "ARM-SecNet Documentation and Evidence Validation"
+echo "================================================"
 echo
 
 echo "Core project files:"
@@ -73,7 +73,7 @@ check_required_file "docs/evidence/v1-screenshots.md"
 check_required_file "docs/demo/v1-demo-script.md"
 
 echo
-echo "V1.1 optional lab documentation (runtime evidence remains separate):"
+echo "V1.1 optional lab documentation and runtime record:"
 echo
 
 check_required_file "docs/labs/lab-03-sentinellite-dashboard.md"
@@ -90,6 +90,19 @@ check_required_file "docs/evidence/screenshots/04-lab01-users-processes.png"
 check_required_file "docs/evidence/screenshots/05-auth-log-sudo-activity.png"
 
 echo
+echo "Recorded Lab 03 screenshot files:"
+echo
+
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/01-vm-prerequisites.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/02-sentinellite-source.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/03-doctor.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/04-synthetic-demo.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/05-json-report-review.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/06-static-dashboard-terminal.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/07-static-dashboard-browser-summary.png"
+check_required_file "docs/evidence/screenshots/v1.1-sentinellite/08-static-dashboard-browser-alerts.png"
+
+echo
 echo "Summary"
 echo "======="
 echo "Passed:  $pass_count"
@@ -103,4 +116,4 @@ if [[ "$fail_count" -gt 0 ]]; then
 fi
 
 echo
-echo "ARM-SecNet documentation validation passed."
+echo "ARM-SecNet documentation and evidence validation passed."

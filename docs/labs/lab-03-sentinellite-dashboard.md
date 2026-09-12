@@ -9,8 +9,10 @@ report-review, and dashboard CLI. They remain separate repositories with no runt
 dependency between them.
 
 ARM-SecNet V1.0 remains the documentation MVP with two tested labs. This guide does not
-claim an ARM-SecNet V1.1 release is published or that Lab 03 has completed VM validation.
-Evidence for this lab is [planned separately](../evidence/v1.1-sentinellite-dashboard.md).
+claim an ARM-SecNet V1.1 release is published.
+Runtime evidence for one Ubuntu ARM64 VM run is recorded in
+[docs/evidence/v1.1-sentinellite-dashboard.md](../evidence/v1.1-sentinellite-dashboard.md).
+That result applies only to the recorded VM and source commit, not all ARM64 environments.
 
 SentinelLite AI `v1.1.0-beta` is the current published
 [GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.1.0-beta).
@@ -191,17 +193,18 @@ Do not start a server or expose the VM to obtain a screenshot.
 - [ ] Record command outcomes and any limitations; do not mark skipped steps as passed.
 - [ ] Review evidence before sharing and redact personal paths or host identifiers.
 
-Use the [V1.1 evidence plan](../evidence/v1.1-sentinellite-dashboard.md) to record results.
+Use the [V1.1 runtime evidence record](../evidence/v1.1-sentinellite-dashboard.md) as a
+reference when recording results for additional runs.
 Run `git branch --show-current` and `git rev-parse HEAD` from each repository's own checkout
 when recording its provenance.
 Do not copy real host reports into either repository.
 
 ## 8. Expected Screenshots
 
-Capture six images: VM prerequisites; SentinelLite source/command availability; doctor;
-synthetic demo; JSON report review; and static dashboard. The evidence plan lists proposed
-filenames and what each image should establish. Those filenames are planned assets,
-not screenshots already collected. Existing V1.0 screenshots do not validate Lab 03.
+For a repeat run, capture eight images: VM prerequisites; SentinelLite source/command
+availability; doctor; synthetic demo; JSON report review; dashboard export in the terminal;
+browser summary; and browser alerts/report table. The evidence record links all eight
+screenshots from the recorded run. Existing V1.0 screenshots remain separate from Lab 03.
 
 ## 9. Troubleshooting
 
@@ -249,9 +252,9 @@ the remaining files manually; do not replace these commands with recursive force
 
 ## 11. What This Proves for ARM-SecNet
 
-When completed and supported by evidence, this lab can demonstrate that a specific
-Ubuntu ARM64 VM can install the recorded SentinelLite source, run local readiness checks,
-process synthetic fixtures, review JSON, and export a standalone static dashboard.
+The recorded run demonstrates local readiness checks, synthetic fixture processing, JSON
+review, standalone static dashboard export and browser viewing on one Ubuntu ARM64 VM
+with the recorded SentinelLite source. Repeat runs on other environments need their own evidence.
 
 It connects ARM-SecNet's lab environment to an optional tool workflow without merging
 repositories or adding a runtime dependency. It does not prove live endpoint protection,
