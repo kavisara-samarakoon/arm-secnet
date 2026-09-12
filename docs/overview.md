@@ -74,6 +74,24 @@ V1 includes:
 10. V1 demo script
 11. Validation script for V1 documentation and evidence
 
+## Optional V1.1 SentinelLite Dashboard Lab
+
+[Lab 03](labs/lab-03-sentinellite-dashboard.md) adds documentation for an optional local
+SentinelLite AI CLI and static dashboard demonstration inside the Ubuntu ARM64 VM.
+ARM-SecNet provides the lab environment; SentinelLite provides the defensive observation,
+report-review and dashboard CLI. The repositories remain separate with no runtime dependency.
+
+The lab itself uses only local installation checks, synthetic demo data, stored JSON report
+review and static HTML export. It performs no endpoint observation, scanning, exploitation
+or automatic remediation. The dashboard has no server, network requests or live monitoring.
+It provides no production security protection or real AI/LLM capability.
+
+Use SentinelLite source from `main`. Its dashboard command is a development-source addition
+after the current published v1.1.0-beta pre-release and is absent from that release's wheel.
+No SentinelLite v1.2 release or ARM-SecNet V1.1 publication is claimed. The V1.0 docs MVP
+remains the two tested labs listed above; [Lab 03 evidence](evidence/v1.1-sentinellite-dashboard.md)
+and VM validation are planned separately.
+
 ## Learning Goals
 
 After completing the V1 labs, a learner should be able to:

@@ -73,6 +73,13 @@ check_required_file "docs/evidence/v1-screenshots.md"
 check_required_file "docs/demo/v1-demo-script.md"
 
 echo
+echo "V1.1 optional lab documentation (runtime evidence remains separate):"
+echo
+
+check_required_file "docs/labs/lab-03-sentinellite-dashboard.md"
+check_required_file "docs/evidence/v1.1-sentinellite-dashboard.md"
+
+echo
 echo "Screenshot files:"
 echo
 
@@ -96,4 +103,4 @@ if [[ "$fail_count" -gt 0 ]]; then
 fi
 
 echo
-echo "ARM-SecNet V1 validation passed."
+echo "ARM-SecNet documentation validation passed."

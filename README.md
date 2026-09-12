@@ -51,6 +51,21 @@ ARM-SecNet V1 currently includes:
 - V1 demo script
 - validation script with V1 documentation and evidence checks
 
+## V1.1 Documentation Next Step
+
+[Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
+adds an optional Ubuntu ARM64 workflow using `sentinellite doctor`, synthetic `demo` data,
+and `sentinellite dashboard export`. Use SentinelLite source from `main`: the current
+published SentinelLite AI v1.1.0-beta wheel does not include the dashboard command.
+
+ARM-SecNet provides the ARM64 lab environment; SentinelLite provides the optional local
+defensive CLI. They remain separate repositories with no runtime dependency. The dashboard
+is static local HTML with no server, network requests or live monitoring.
+
+This is V1.1 documentation work, not a published ARM-SecNet V1.1 release. The V1.0
+documentation MVP and its two tested labs remain unchanged. Lab 03 VM validation and
+[dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) are planned, not completed.
+
 ## Quick Navigation
 
 ### Core Documentation
@@ -68,6 +83,11 @@ ARM-SecNet V1 currently includes:
 
 - [Lab 01 — Linux Baseline Investigation](docs/labs/lab-01-linux-baseline.md)
 - [Lab 02 — Authentication Log Analysis](docs/labs/lab-02-auth-log-analysis.md)
+
+### V1.1 Optional Lab Documentation
+
+- [Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
+- [Planned SentinelLite Dashboard Evidence](docs/evidence/v1.1-sentinellite-dashboard.md)
 
 ### Review, Evidence, and Demo
 
@@ -87,12 +107,17 @@ bash scripts/validate-lab.sh
 Expected result:
 
 ```text
-Passed:  19
+Passed:  21
 Warnings: 0
 Failed:  0
 
-ARM-SecNet V1 validation passed.
+ARM-SecNet documentation validation passed.
 ```
+
+The current script checks the 19 original V1 files and screenshots plus two V1.1
+documentation files. It does not install or run SentinelLite, require planned Lab 03
+screenshots, or establish VM runtime validation. The V1.0 tag's 19-check result remains
+historical evidence.
 
 ## V1 Lab Topology
 
@@ -153,6 +178,7 @@ arm-secnet/
 │   │   └── v1-demo-script.md
 │   ├── evidence/
 │   │   ├── v1-screenshots.md
+│   │   ├── v1.1-sentinellite-dashboard.md
 │   │   └── screenshots/
 │   │       ├── 01-arm64-hostnamectl.png
 │   │       ├── 02-network-shared-nat.png
@@ -164,7 +190,8 @@ arm-secnet/
 │   │   └── arm64-linux-vm-setup.md
 │   └── labs/
 │       ├── lab-01-linux-baseline.md
-│       └── lab-02-auth-log-analysis.md
+│       ├── lab-02-auth-log-analysis.md
+│       └── lab-03-sentinellite-dashboard.md
 ├── scripts/
 │   └── validate-lab.sh
 ├── LICENSE
@@ -250,7 +277,7 @@ Possible future improvements include:
 - cleaner Ubuntu Server ARM64 test evidence
 - learner worksheet and findings report templates
 - validation improvements
-- SentinelLite AI integration guide
+- completed VM validation and reviewed evidence for the optional SentinelLite dashboard lab
 
 These are intentionally delayed until the V1 documentation and lab experience are stable.
 
