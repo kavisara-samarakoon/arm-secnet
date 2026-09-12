@@ -69,11 +69,15 @@ Run the validation script:
 
 Expected result:
 
-    Passed:  19
+    Passed:  21
     Warnings: 0
     Failed:  0
 
-    ARM-SecNet V1 validation passed.
+    ARM-SecNet documentation validation passed.
+
+This is the current documentation-branch result: 19 original V1 checks plus the new lab
+guide and evidence plan. The V1.0 tag's 19-check result and documentation MVP claim remain
+unchanged. Planned Lab 03 screenshots are not required by this file-presence check.
 
 ## 6. Suggested Demo Flow
 
@@ -159,7 +163,9 @@ Run:
 
     bash scripts/validate-lab.sh
 
-Explain that the validation script checks whether all required V1 files and evidence files exist.
+Explain that the validation script checks whether required V1 files and evidence files,
+plus the V1.1 lab guide and evidence plan, exist. It does not run SentinelLite or validate
+the new VM workflow.
 
 ## 7. Short Explanation to Say During Demo
 
@@ -196,10 +202,44 @@ Possible future improvements:
 - test on a cleaner minimal Ubuntu Server ARM64 VM
 - add more screenshot evidence
 - add learner worksheets and answer templates
-- optionally integrate SentinelLite AI in a later version
+- complete VM validation and reviewed evidence for the optional V1.1 SentinelLite lab below
 
 ## 10. Demo Closing Statement
 
 ARM-SecNet V1 proves that a safe ARM64 cybersecurity lab can be built, documented, tested, and validated on Apple Silicon.
 
 The project is useful for my cybersecurity and networking learning path, and it can also help other students who want to start defensive cybersecurity labs on ARM64 systems.
+
+## 11. Optional V1.1 Next-Step Demo Path
+
+Keep the V1.0 demonstration above as the documentation MVP. Then show
+[Lab 03 — SentinelLite AI Local CLI and Static Dashboard](../labs/lab-03-sentinellite-dashboard.md)
+as a V1.1 documentation addition with [planned evidence](../evidence/v1.1-sentinellite-dashboard.md).
+This does not announce an ARM-SecNet V1.1 release or a completed Lab 03 VM test.
+
+Explain the relationship: ARM-SecNet provides the ARM64 lab VM; SentinelLite AI supplies
+the optional local defensive CLI. They remain separate repositories with no runtime dependency.
+
+Prepare SentinelLite from GitHub source on `main` inside the VM using Lab 03. The published
+SentinelLite AI v1.1.0-beta wheel includes doctor and demo, but not dashboard export. The
+dashboard is available in current development source; no SentinelLite v1.2 release is claimed.
+
+After activating that source environment and entering the fresh lab output directory:
+
+```bash
+sentinellite doctor
+sentinellite demo
+sentinellite dashboard export
+sentinellite reports list
+```
+
+Review the JSON path printed by demo with `sentinellite reports show`, then open
+`reports/dashboard.html` manually using the local browser. Capture source provenance,
+command results and the HTML view according to the evidence plan. Use the cleanup commands
+in Lab 03 after saving the intended evidence.
+
+Say explicitly that the demo uses synthetic data only and the dashboard reads existing
+local JSON reports. There is no server, network activity, live monitoring, scanning,
+exploitation, automatic remediation or real AI/LLM execution. This illustrates local lab
+usability and report review, not production security protection. Until the VM run is
+recorded, present the steps as planned rather than completed.
