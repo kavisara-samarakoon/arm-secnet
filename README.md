@@ -55,8 +55,9 @@ ARM-SecNet V1 currently includes:
 
 [Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
 adds an optional Ubuntu ARM64 workflow using `sentinellite doctor`, synthetic `demo` data,
-and `sentinellite dashboard export`. Use SentinelLite source from `main`: the current
-published SentinelLite AI v1.1.0-beta wheel does not include the dashboard command.
+and `sentinellite dashboard export`. For new Lab 03 runs, use the published
+[SentinelLite AI v1.2.0-beta GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
+wheel or source at the `v1.2.0-beta` release tag. This release includes all three commands.
 
 ARM-SecNet provides the ARM64 lab environment; SentinelLite provides the optional local
 defensive CLI. They remain separate repositories with no runtime dependency. The dashboard
@@ -65,8 +66,11 @@ is static local HTML with no server, network requests or live monitoring.
 This is V1.1 documentation work, not a published ARM-SecNet V1.1 release. The V1.0
 documentation MVP and its two tested labs remain unchanged. Lab 03 VM validation and
 [dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) are now recorded for one
-Ubuntu 26.04 LTS aarch64 VM. This does not establish universal ARM64 compatibility or
-production security protection.
+Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, before v1.2.0-beta publication. The existing
+screenshots do not validate the exact v1.2.0-beta release wheel; a new run needs separate
+evidence. This does not establish universal ARM64 compatibility or production security
+protection. See the [V1.1 release-prep note](docs/release-notes-v1.1.0-sentinellite-dashboard-lab.md).
 
 ## Quick Navigation
 
@@ -120,6 +124,11 @@ The current script checks the 19 original V1 files and screenshots, two V1.1 doc
 files, and eight recorded Lab 03 screenshots. These are documentation/evidence presence
 checks, not product validation or a fresh VM runtime test. The V1.0 tag's 19-check result
 remains historical evidence.
+
+[GitHub Actions validation](.github/workflows/validate.yml) runs these same checks and
+`git diff --check` on pull requests and pushes to `main`, using `ubuntu-latest`.
+It validates documentation/evidence file presence only; it does not install or run
+SentinelLite or perform ARM64 VM validation.
 
 ## V1 Lab Topology
 

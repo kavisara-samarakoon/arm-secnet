@@ -86,12 +86,20 @@ review and static HTML export. It performs no endpoint observation, scanning, ex
 or automatic remediation. The dashboard has no server, network requests or live monitoring.
 It provides no production security protection or real AI/LLM capability.
 
-Use SentinelLite source from `main`. Its dashboard command is a development-source addition
-after the current published v1.1.0-beta pre-release and is absent from that release's wheel.
-No SentinelLite v1.2 release or ARM-SecNet V1.1 publication is claimed. The V1.0 docs MVP
-remains the two tested labs listed above. [Lab 03 runtime evidence](evidence/v1.1-sentinellite-dashboard.md)
-is now recorded for one Ubuntu 26.04 LTS aarch64 VM. Validation is limited to that VM and
-the recorded SentinelLite source commit; it does not establish universal ARM64 compatibility.
+[SentinelLite AI v1.2.0-beta](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
+is now the published dashboard milestone, available as a GitHub pre-release. New Lab 03
+runs should use its published wheel or the `v1.2.0-beta` source tag.
+
+ARM-SecNet V1.1 remains release preparation; the V1.0 docs MVP remains the two tested labs
+listed above. [Lab 03 runtime evidence](evidence/v1.1-sentinellite-dashboard.md) is recorded
+for one Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, before v1.2.0-beta publication. Validation is
+limited to that VM and source commit. It does not validate the exact v1.2.0-beta release
+wheel or establish universal ARM64 compatibility. New runs require separate evidence.
+
+GitHub Actions runs the 29 documentation/evidence file-presence checks and
+`git diff --check` on pull requests and pushes to `main`. It does not install SentinelLite
+or execute the VM workflow.
 
 ## Learning Goals
 

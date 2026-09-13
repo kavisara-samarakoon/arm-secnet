@@ -221,11 +221,17 @@ universal ARM64 compatibility.
 Explain the relationship: ARM-SecNet provides the ARM64 lab VM; SentinelLite AI supplies
 the optional local defensive CLI. They remain separate repositories with no runtime dependency.
 
-Prepare SentinelLite from GitHub source on `main` inside the VM using Lab 03. The published
-SentinelLite AI v1.1.0-beta wheel includes doctor and demo, but not dashboard export. The
-dashboard is available in current development source; no SentinelLite v1.2 release is claimed.
+Prepare SentinelLite inside the VM using either Lab 03 install path: the published
+[SentinelLite AI v1.2.0-beta GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
+wheel for repeat validation, or source at the `v1.2.0-beta` release tag for development and
+provenance. SentinelLite v1.2.0-beta includes `doctor`, `demo`, and `dashboard export`.
 
-After activating that source environment and entering the fresh lab output directory:
+The existing evidence was recorded before publication using source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, with CLI version `SentinelLite AI v1.1.0-beta`.
+Those screenshots validate that earlier source run only. An exact v1.2.0-beta release-wheel
+VM validation claim requires a new run with separately recorded evidence.
+
+After activating the chosen virtual environment and entering the fresh lab output directory:
 
 ```bash
 sentinellite doctor
@@ -235,7 +241,7 @@ sentinellite reports list
 ```
 
 Review the JSON path printed by demo with `sentinellite reports show`, then open
-`reports/dashboard.html` manually using the local browser. Capture source provenance,
+`reports/dashboard.html` manually using the local browser. Capture wheel/hash or tag/commit provenance,
 command results and the HTML view using the recorded evidence as a reference. Use the cleanup commands
 in Lab 03 after saving the intended evidence.
 

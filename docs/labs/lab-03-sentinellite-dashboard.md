@@ -14,11 +14,15 @@ Runtime evidence for one Ubuntu ARM64 VM run is recorded in
 [docs/evidence/v1.1-sentinellite-dashboard.md](../evidence/v1.1-sentinellite-dashboard.md).
 That result applies only to the recorded VM and source commit, not all ARM64 environments.
 
-SentinelLite AI `v1.1.0-beta` is the current published
-[GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.1.0-beta).
-Its wheel includes `doctor` and `demo`, but **does not include `dashboard export`**.
-The dashboard exporter was merged into SentinelLite `main` after that release. Use source
-from `main` for this lab. This guide does not claim a SentinelLite v1.2 release exists.
+SentinelLite AI `v1.2.0-beta` is now the published dashboard milestone, released as a
+[GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
+at `2026-09-12T05:37:29Z`. Its wheel includes `doctor`, `demo`, and `dashboard export`.
+Use that wheel or the `v1.2.0-beta` release tag for new runs.
+
+The existing screenshots were recorded before publication using source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e` on one Ubuntu 26.04 LTS aarch64 VM. That source
+already contained the exporter, while its CLI version showed `SentinelLite AI v1.1.0-beta`.
+The screenshots do not validate the exact v1.2.0-beta release wheel. Record new runs separately.
 
 ## 2. Safety Scope
 
@@ -50,7 +54,7 @@ dashboard workflow itself does not send network traffic. Follow the existing
   [VM setup guide](../setup/arm64-linux-vm-setup.md)
 - Python 3.11 or newer, Python virtual-environment support, and Git inside the VM
 - A writable home directory and temporary directory
-- Network access for downloading trusted source and Python dependencies
+- Network access for downloading the release wheel or trusted source and Python dependencies
 - A graphical browser for manually viewing local HTML, if a dashboard screenshot is needed
 
 Run inside the Ubuntu VM terminal:
@@ -65,16 +69,51 @@ Expect `aarch64` and Python 3.11 or newer. Correct the VM architecture or Python
 before proceeding if those requirements are not met. Architecture output alone is not
 proof of successful application validation.
 
-## 4. Install SentinelLite from GitHub Source
+## 4. Install SentinelLite v1.2.0-beta
 
-Create a separate checkout outside the ARM-SecNet repository:
+Choose one path inside the VM. Use a separate installation directory outside ARM-SecNet.
+If a directory below already exists, review its contents and use a fresh directory name
+if needed; do not overwrite an existing environment or reset someone else's checkout.
+
+### A) Published Wheel for Repeat Validation
+
+Create a dedicated virtual environment and install the published GitHub release asset.
+The URL pins the wheel's SHA256 digest so pip checks the downloaded artifact:
+
+```bash
+mkdir -p "$HOME/lab-tools/sentinellite-v1.2.0-beta-wheel"
+cd "$HOME/lab-tools/sentinellite-v1.2.0-beta-wheel"
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install 'https://github.com/kavisara-samarakoon/sentinellite-ai/releases/download/v1.2.0-beta/sentinellite_ai-1.2.0b0-py3-none-any.whl#sha256=fc8c647921d1d2575cb0ac25e1a7f32191e8ea8e0363a90a4728bf59dae4ba15'
+python -m pip check
+python -m pip show sentinellite-ai
+```
+
+Save the release URL, wheel filename, SHA256 digest, and install output with the new run's
+evidence. The package version is `1.2.0b0`, the Python packaging form of `v1.2.0-beta`.
+This pins the SentinelLite wheel, not every dependency or the VM environment.
+
+### B) Release-Tag Source for Development and Provenance
+
+Create a separate checkout at the published tag:
 
 ```bash
 mkdir -p "$HOME/lab-tools"
 cd "$HOME/lab-tools"
-git clone https://github.com/kavisara-samarakoon/sentinellite-ai.git
-cd sentinellite-ai
-git switch main
+git clone --branch v1.2.0-beta --single-branch https://github.com/kavisara-samarakoon/sentinellite-ai.git sentinellite-v1.2.0-beta-source
+cd sentinellite-v1.2.0-beta-source
+git rev-parse refs/tags/v1.2.0-beta
+git rev-parse HEAD
+```
+
+Expect tag object `548c4ce46de9dbbf52cf43fd9f5cb541224fa03f` and target commit
+`d60813350cbb2b1e09ed99c6afa15442f280e043`, respectively. Stop and resolve any mismatch
+before installation. A detached HEAD at the tag is expected. Save both hashes with your
+evidence, then install the tagged source:
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -82,26 +121,24 @@ python -m pip install -e .
 python -m pip check
 ```
 
-If that checkout already exists, review its local changes before updating it; do not
-overwrite it or reset someone else's work. Use a fresh separate checkout if needed.
-SentinelLite AI is not published to PyPI. `pip install -e .` installs the trusted local
-source and its Python dependencies; it does not install ARM-SecNet as a dependency.
+`pip install -e .` installs the local tagged source and its Python dependencies; it does
+not install ARM-SecNet as a dependency. Record `git status --short` as well as the tag and
+commit. Development edits change the installed code and must be disclosed in the new
+run's evidence; an edited checkout is not validation of the unmodified release tag.
 
-Record which source you installed and verify the command is available:
+### Verify Either Installation
 
 ```bash
-git branch --show-current
-git rev-parse HEAD
+command -v python
+command -v sentinellite
 sentinellite --version
 sentinellite dashboard export --help
 ```
 
-The branch should be `main`; keep the printed commit hash with your evidence. The CLI
-version may still show `SentinelLite AI v1.1.0-beta` on this development source. The version
-string alone cannot distinguish it from the published wheel. The source commit and
-`dashboard export --help` output establish dashboard availability for this run.
-
-Keep this virtual environment active in the same terminal for the remaining steps.
+Both commands should resolve inside the selected `.venv`, the CLI should report
+`SentinelLite AI v1.2.0-beta`, and dashboard help should be available. Keep this virtual
+environment active in the same terminal for the remaining steps. Version output alone
+does not establish exact artifact provenance; retain the wheel/hash or tag/commit record.
 
 ## 5. Run the Safe CLI and Dashboard Demo
 
@@ -128,7 +165,7 @@ attention, not that the VM is compromised. Exit code 0 allows passes or warnings
 failures return code 1.
 
 `demo` should report three synthetic authentication events and three example alerts with
-the current source, then print the saved JSON path and report-review commands. These
+v1.2.0-beta, then print the saved JSON path and report-review commands. These
 records describe fixture activity, not real events observed on the VM.
 
 `dashboard export` reads the existing JSON files in `reports` and writes
@@ -184,7 +221,8 @@ Do not start a server or expose the VM to obtain a screenshot.
 ## 7. Evidence Checklist
 
 - [ ] Record date, VM OS, architecture, Python version, and UTM Shared/NAT setup.
-- [ ] Record the ARM-SecNet branch/commit and the separate SentinelLite `main` commit.
+- [ ] Record the ARM-SecNet branch/commit and the chosen SentinelLite installation path:
+  wheel URL/filename/SHA256, or release tag/tag object/source commit and checkout changes.
 - [ ] Capture `sentinellite --version` and `dashboard export --help` output.
 - [ ] Capture `doctor` results, including any warnings or failures.
 - [ ] Capture `demo` output and identify the report as synthetic.
@@ -194,14 +232,16 @@ Do not start a server or expose the VM to obtain a screenshot.
 - [ ] Review evidence before sharing and redact personal paths or host identifiers.
 
 Use the [V1.1 runtime evidence record](../evidence/v1.1-sentinellite-dashboard.md) as a
-reference when recording results for additional runs.
+reference when recording results for additional runs. Save new evidence separately;
+do not replace the historical screenshots or relabel them as v1.2.0-beta wheel validation.
 Run `git branch --show-current` and `git rev-parse HEAD` from each repository's own checkout
-when recording its provenance.
+when recording its provenance. The source-tag path has a detached HEAD; the wheel path
+has no SentinelLite checkout and uses the artifact provenance instead.
 Do not copy real host reports into either repository.
 
 ## 8. Expected Screenshots
 
-For a repeat run, capture eight images: VM prerequisites; SentinelLite source/command
+For a repeat run, capture eight images: VM prerequisites; SentinelLite installation/command
 availability; doctor; synthetic demo; JSON report review; dashboard export in the terminal;
 browser summary; and browser alerts/report table. The evidence record links all eight
 screenshots from the recorded run. Existing V1.0 screenshots remain separate from Lab 03.
@@ -212,15 +252,15 @@ screenshots from the recorded run. Existing V1.0 screenshots remain separate fro
 |---|---|
 | Architecture is not `aarch64` | Check that these commands are running inside the Ubuntu ARM64 VM. |
 | Python is older than 3.11, or `venv` is unavailable | Complete Python and virtual-environment prerequisites using the VM's normal setup process, then recreate the lab environment. |
-| `dashboard` is an unknown command | Confirm the active environment uses a source checkout from SentinelLite `main`. The published v1.1.0-beta wheel lacks this command. Check the source commit and rerun `python -m pip install -e .` from that checkout. |
-| `sentinellite` is not found | Reactivate `$HOME/lab-tools/sentinellite-ai/.venv/bin/activate` in the current shell. |
-| Doctor reports an import failure | Run `python -m pip check` in the active environment and repair the source installation. Typer and Rich must be installed for the CLI to start at all. |
+| `dashboard` is an unknown command | You may be using v1.1.0-beta or older, the wrong virtual environment, or a stale install. Check `command -v python`, `command -v sentinellite`, and `sentinellite --version`. Activate the selected v1.2.0-beta environment and reinstall: rerun Path A's pinned wheel install with `--force-reinstall`, or run `python -m pip install --force-reinstall -e .` from Path B's verified tag checkout. Then repeat `python -m pip check` and dashboard help. |
+| `sentinellite` is not found | Reactivate the chosen environment in the current shell: `source "$HOME/lab-tools/sentinellite-v1.2.0-beta-wheel/.venv/bin/activate"` for Path A, or `source "$HOME/lab-tools/sentinellite-v1.2.0-beta-source/.venv/bin/activate"` for Path B. Use your actual directory if you chose another name. |
+| Doctor reports an import failure | Run `python -m pip check` in the active environment and repair the chosen wheel or tagged-source installation. Typer and Rich must be installed for the CLI to start at all. |
 | Doctor or export reports a write error | Use a fresh writable lab output directory. Do not use root privileges or change host file permissions to force the demo. |
 | Dashboard says no reports were found | Check `pwd` and `sentinellite reports list`; run the synthetic demo from the same isolated output directory before exporting. |
 | Export reports skipped files | Review the selected report directory. A fresh synthetic demo avoids unrelated, incompatible or malformed JSON. Do not edit real reports to make them load. |
 | Dashboard does not change | It is static HTML. Export again after creating a new synthetic report, then reopen or reload the local file manually. |
 | No VM graphical browser | Use the documented local shared-folder option or record the browser step as not performed. |
-| `lab_output` is unset after reopening the terminal | Use the exact temporary path recorded earlier; do not guess a path for cleanup. Reactivate the source environment before running more commands. |
+| `lab_output` is unset after reopening the terminal | Use the exact temporary path recorded earlier; do not guess a path for cleanup. Reactivate the chosen virtual environment before running more commands. |
 
 ## 10. Cleanup Commands
 
