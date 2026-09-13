@@ -6,6 +6,9 @@ ARM-SecNet is an ARM64-first defensive cybersecurity and networking lab toolkit 
 
 The project helps learners build a small, repeatable security lab using UTM, ARM64 Linux, safe investigation exercises, setup documentation, and simple validation checks.
 
+Latest published release: [ARM-SecNet V1.1.0 SentinelLite Dashboard Lab](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab)
+— published 2026-09-13. See the [release notes](docs/release-notes-v1.1.0-sentinellite-dashboard-lab.md).
+
 ## Project Purpose
 
 Many cybersecurity and networking learning resources are still designed around x86 systems, VirtualBox, VMware, and older lab setups. Students using Apple Silicon Macs often face ARM64 compatibility issues when building cybersecurity labs.
@@ -16,7 +19,7 @@ ARM-SecNet addresses this by providing a small, repeatable, ARM64-first defensiv
 
 ARM-SecNet is a **lab toolkit**, not a custom operating system, not a full SOC platform, and not a replacement for existing cybersecurity tools.
 
-The first version focuses on:
+The current release focuses on:
 
 - setting up UTM on Apple Silicon
 - creating an ARM64 Linux VM
@@ -24,6 +27,7 @@ The first version focuses on:
 - running safe Linux baseline checks
 - analyzing authentication logs
 - writing a basic security findings report
+- optionally running the SentinelLite synthetic demo and exporting a local static dashboard
 
 ## Target Users
 
@@ -35,9 +39,34 @@ The first version focuses on:
 - Beginner Blue Team / SOC learners
 - Individual learners and small cybersecurity clubs
 
-## Version 1 MVP
+## V1.1.0 SentinelLite Dashboard Lab — Latest Published Release
 
-ARM-SecNet V1 currently includes:
+[ARM-SecNet V1.1.0 SentinelLite Dashboard Lab](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab)
+was published on 2026-09-13 under tag `v1.1.0-sentinellite-dashboard-lab`.
+V1.1 includes three documented labs: Linux baseline investigation, authentication log
+analysis, and the optional SentinelLite dashboard lab, with 29 documentation/evidence checks.
+
+[Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
+adds an optional Ubuntu ARM64 workflow using `sentinellite doctor`, synthetic `demo` data,
+and `sentinellite dashboard export`. For new Lab 03 runs, use the published
+[SentinelLite AI v1.2.0-beta GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
+wheel or source at the `v1.2.0-beta` release tag. This release includes all three commands.
+
+ARM-SecNet provides the ARM64 lab environment; SentinelLite provides the optional local
+defensive CLI. They remain separate repositories with no runtime dependency. The dashboard
+is static local HTML with no server, network requests or live monitoring.
+
+The historical V1.0 documentation MVP and its two tested labs remain unchanged.
+Lab 03 VM validation and [dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) were recorded for one
+Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, before v1.2.0-beta publication. The existing
+screenshots do not validate the exact v1.2.0-beta release wheel; a new run needs separate
+evidence. This does not establish universal ARM64 compatibility or production security
+protection. See the [V1.1.0 release notes](docs/release-notes-v1.1.0-sentinellite-dashboard-lab.md).
+
+## V1.0.0 Documentation MVP — Historical Release
+
+The historical `v1.0.0-docs-mvp` release includes:
 
 - UTM setup guide for Apple Silicon macOS
 - ARM64 Linux VM setup guide
@@ -50,27 +79,6 @@ ARM-SecNet V1 currently includes:
 - screenshot evidence from a real ARM64 VM test
 - V1 demo script
 - validation script with V1 documentation and evidence checks
-
-## V1.1 Documentation Next Step
-
-[Lab 03 — SentinelLite AI Local CLI and Static Dashboard](docs/labs/lab-03-sentinellite-dashboard.md)
-adds an optional Ubuntu ARM64 workflow using `sentinellite doctor`, synthetic `demo` data,
-and `sentinellite dashboard export`. For new Lab 03 runs, use the published
-[SentinelLite AI v1.2.0-beta GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
-wheel or source at the `v1.2.0-beta` release tag. This release includes all three commands.
-
-ARM-SecNet provides the ARM64 lab environment; SentinelLite provides the optional local
-defensive CLI. They remain separate repositories with no runtime dependency. The dashboard
-is static local HTML with no server, network requests or live monitoring.
-
-This is V1.1 documentation work, not a published ARM-SecNet V1.1 release. The V1.0
-documentation MVP and its two tested labs remain unchanged. Lab 03 VM validation and
-[dashboard evidence](docs/evidence/v1.1-sentinellite-dashboard.md) are now recorded for one
-Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
-`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, before v1.2.0-beta publication. The existing
-screenshots do not validate the exact v1.2.0-beta release wheel; a new run needs separate
-evidence. This does not establish universal ARM64 compatibility or production security
-protection. See the [V1.1 release-prep note](docs/release-notes-v1.1.0-sentinellite-dashboard-lab.md).
 
 ## Quick Navigation
 

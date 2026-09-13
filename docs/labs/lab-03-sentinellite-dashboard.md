@@ -8,8 +8,9 @@ environment. SentinelLite AI provides the optional local defensive observation,
 report-review, and dashboard CLI. They remain separate repositories with no runtime
 dependency between them.
 
-ARM-SecNet V1.0 remains the documentation MVP with two tested labs. This guide does not
-claim an ARM-SecNet V1.1 release is published.
+ARM-SecNet V1.0 remains the historical documentation MVP with two tested labs. This guide
+is included in the published
+[ARM-SecNet V1.1.0 SentinelLite Dashboard Lab release](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab).
 Runtime evidence for one Ubuntu ARM64 VM run is recorded in
 [docs/evidence/v1.1-sentinellite-dashboard.md](../evidence/v1.1-sentinellite-dashboard.md).
 That result applies only to the recorded VM and source commit, not all ARM64 environments.
