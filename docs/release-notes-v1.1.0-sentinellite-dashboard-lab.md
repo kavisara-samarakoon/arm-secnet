@@ -1,9 +1,17 @@
-# ARM-SecNet V1.1.0 — SentinelLite Dashboard Lab Release Preparation
+# ARM-SecNet V1.1.0 SentinelLite Dashboard Lab
 
-Status: **release-prep note, not a published ARM-SecNet release announcement**.
+Status: **published release** (not a draft or pre-release), listed as Latest at publication.
+
+- Release: [ARM-SecNet V1.1.0 SentinelLite Dashboard Lab](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab)
+- Published at: `2026-09-13T06:16:54Z`
+- Release tag: `v1.1.0-sentinellite-dashboard-lab`
+- Annotated tag object: `9d767ffc76cda88d07d20c78d1dac9ce9bc3e7dc`
+- Tag target commit: `329f5e66d7986d68b547aa267f73976417c0c0f3` — merge of PR #3,
+  `feature/v1.1-final-polish`, into `main`.
+
 The V1.0 documentation MVP, tag, history, and existing screenshot evidence remain unchanged.
 
-## Prepared Scope
+## Release Scope
 
 - Three documented labs: Linux baseline investigation, authentication log analysis, and
   the optional SentinelLite AI local CLI and static dashboard workflow.
@@ -22,6 +30,15 @@ The V1.0 documentation MVP, tag, history, and existing screenshot evidence remai
   is the recommended published dashboard release for new runs. This GitHub pre-release
   includes `doctor`, `demo`, and `dashboard export`. Lab 03 documents both a published-wheel
   installation and source installation at the release tag.
+
+## Validation
+
+GitHub Actions **ARM-SecNet Validation** passed on
+[PR #3](https://github.com/kavisara-samarakoon/arm-secnet/pull/3).
+Local validation after publication also passed: `bash scripts/validate-lab.sh` reported
+**29 passed, 0 warnings, 0 failures**, and `git diff --check` passed.
+These are documentation/evidence file-presence and whitespace checks; they do not perform
+a new SentinelLite runtime or ARM64 VM validation run.
 
 ## Evidence and Safety Limits
 

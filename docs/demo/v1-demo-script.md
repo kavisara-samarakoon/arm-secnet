@@ -210,13 +210,14 @@ ARM-SecNet V1 proves that a safe ARM64 cybersecurity lab can be built, documente
 
 The project is useful for my cybersecurity and networking learning path, and it can also help other students who want to start defensive cybersecurity labs on ARM64 systems.
 
-## 11. Optional V1.1 Next-Step Demo Path
+## 11. Optional V1.1.0 Dashboard Demo Path
 
 Keep the V1.0 demonstration above as the documentation MVP. Then show
 [Lab 03 — SentinelLite AI Local CLI and Static Dashboard](../labs/lab-03-sentinellite-dashboard.md)
-as a V1.1 documentation addition with [recorded runtime evidence](../evidence/v1.1-sentinellite-dashboard.md)
-from one Ubuntu ARM64 VM. This does not announce an ARM-SecNet V1.1 release or establish
-universal ARM64 compatibility.
+as part of the published
+[ARM-SecNet V1.1.0 SentinelLite Dashboard Lab release](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab),
+with [recorded runtime evidence](../evidence/v1.1-sentinellite-dashboard.md) from one Ubuntu
+ARM64 VM. This evidence does not establish universal ARM64 compatibility.
 
 Explain the relationship: ARM-SecNet provides the ARM64 lab VM; SentinelLite AI supplies
 the optional local defensive CLI. They remain separate repositories with no runtime dependency.

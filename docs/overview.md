@@ -90,8 +90,9 @@ It provides no production security protection or real AI/LLM capability.
 is now the published dashboard milestone, available as a GitHub pre-release. New Lab 03
 runs should use its published wheel or the `v1.2.0-beta` source tag.
 
-ARM-SecNet V1.1 remains release preparation; the V1.0 docs MVP remains the two tested labs
-listed above. [Lab 03 runtime evidence](evidence/v1.1-sentinellite-dashboard.md) is recorded
+[ARM-SecNet V1.1.0 SentinelLite Dashboard Lab](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab)
+is now published, with three documented labs. The historical V1.0 docs MVP remains the two
+tested labs listed above. [Lab 03 runtime evidence](evidence/v1.1-sentinellite-dashboard.md) is recorded
 for one Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
 `d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, before v1.2.0-beta publication. Validation is
 limited to that VM and source commit. It does not validate the exact v1.2.0-beta release
