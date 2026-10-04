@@ -1,0 +1,13 @@
+26396fa0a825082d3f091d0855cd9dbfbd7bd597273767d582cfcdf82a600027  docs/evidence/screenshots/01-arm64-hostnamectl.png
+229a49ac92bb76b878267b606cbe8cc9415d70997921bb3c9d3959d23a2c0e53  docs/evidence/screenshots/02-network-shared-nat.png
+3a2575f586675c6167318c24b701d1c925e3c841f0672f789a612a765c0ccde1  docs/evidence/screenshots/03-lab01-system-baseline.png
+37688f8e262cfa34ee987407a597bd003a668c8a94fda22724bfa83a9f7c9819  docs/evidence/screenshots/04-lab01-users-processes.png
+9dca5bcad2fbc5d57c68873a9ee60f0b84a60f22eae6eaac25e1453aec64b99a  docs/evidence/screenshots/05-auth-log-sudo-activity.png
+6b670bfde37d865937de540afa68ca0a5f53f85e19a7cee40e0ce6d3acf7f30b  docs/evidence/screenshots/v1.1-sentinellite/01-vm-prerequisites.png
+9900051d78e1f27b1151a7ae2ebd19448ebf67e092c116914200bfb7303b0bbe  docs/evidence/screenshots/v1.1-sentinellite/02-sentinellite-source.png
+94e847c88e7c6bac32783776dbf3af37e932a5a5c6fa61b9e8983cb9d6886bab  docs/evidence/screenshots/v1.1-sentinellite/03-doctor.png
+b66f7a7a5de0f535839315863bfbcfe9505fca6d072769c18490ce35089dbae4  docs/evidence/screenshots/v1.1-sentinellite/04-synthetic-demo.png
+4894e4e948858e5264b655fbcdf697e6724731b3a151155f9a90875460f8ca35  docs/evidence/screenshots/v1.1-sentinellite/05-json-report-review.png
+aa3769252393c1f95ec363f451d87ab14c36c57ea03ce838a6041df97e83d1af  docs/evidence/screenshots/v1.1-sentinellite/06-static-dashboard-terminal.png
+51f31edd563cf9c1f4c1336ffb44fc80fee663854eb3c641534de229e9620de1  docs/evidence/screenshots/v1.1-sentinellite/07-static-dashboard-browser-summary.png
+b2f4ccd491f24b59ddef950b621cead3b4b5d98d9a0300fdf5b9cd721922fa7e  docs/evidence/screenshots/v1.1-sentinellite/08-static-dashboard-browser-alerts.png
