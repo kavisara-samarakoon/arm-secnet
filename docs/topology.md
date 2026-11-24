@@ -2,6 +2,13 @@
 
 This document explains the first ARM-SecNet lab topology.
 
+The published ARM-SecNet V1.1.0 release documents three labs, with Lab 03 as an
+optional workflow using the separate SentinelLite AI repository. Lab 03 runs inside
+the ARM64 lab VM described here; it does not change this historical V1 topology. Its
+recorded runtime evidence covers one Ubuntu 26.04 LTS aarch64 VM and SentinelLite
+source commit `d1775f0ca09d714f5ed9d681af90f216c1c39e8e` only. That evidence does not
+validate the exact SentinelLite v1.2.0-beta wheel or establish broad ARM64 compatibility.
+
 Version 1 uses a simple single-VM topology to keep the project realistic, safe, and easy to reproduce on Apple Silicon systems.
 
 ## Topology Diagram
@@ -93,7 +100,7 @@ For V1:
 - avoid attacking external systems
 - use lab-generated data where possible
 
-## What V1 Does Not Include
+## What the Historical V1 Topology Does Not Include
 
 The V1 topology does not include:
 
@@ -104,9 +111,11 @@ The V1 topology does not include:
 - packet capture lab
 - public target scanning
 - offensive exploitation lab
-- SentinelLite AI integration
+- built-in SentinelLite AI integration; the optional Lab 03 workflow is documented
+  separately and uses a separate repository
 
-These items may be considered in later versions after the single-VM defensive foundation is stable.
+The V1.1.0 release adds documentation for optional Lab 03 without changing the
+single-VM topology described above.
 
 ## Why This Topology Was Chosen
 
