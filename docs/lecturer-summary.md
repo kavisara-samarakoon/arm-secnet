@@ -48,6 +48,14 @@ The first version focuses on helping students move from basic setup to their fir
 
 ## V1 Scope
 
+This section describes the historical V1.0 documentation MVP. The published
+ARM-SecNet V1.1.0 release documents three labs, with optional Lab 03 using the
+separate SentinelLite AI repository. Lab 03's historical runtime evidence is for one
+Ubuntu 26.04 LTS aarch64 VM and source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`; it does not validate the exact
+SentinelLite v1.2.0-beta wheel or broad ARM64 compatibility. The demo uses synthetic
+data, and its dashboard is local static HTML.
+
 Version 1 is intentionally small and realistic.
 
 ARM-SecNet V1 includes:

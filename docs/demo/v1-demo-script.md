@@ -1,6 +1,6 @@
 # ARM-SecNet V1 Demo Script
 
-This document provides a simple demo flow for explaining ARM-SecNet V1 to a lecturer, reviewer, or portfolio viewer.
+This document preserves the V1.0 demo flow for explaining the historical two-lab documentation MVP. The published ARM-SecNet V1.1.0 release documents three labs, with optional Lab 03 using the separate SentinelLite AI repository; its optional demo path appears at the end of this script.
 
 ## 1. Demo Goal
 
@@ -35,9 +35,9 @@ Apple Silicon users can face issues because:
 
 ARM-SecNet solves this by giving a clean ARM64-friendly path for setup, testing, and learning.
 
-## 4. V1 Scope
+## 4. Historical V1.0 Scope
 
-ARM-SecNet V1 includes:
+The historical V1.0 scope includes:
 
 - project README
 - safety rules
@@ -75,7 +75,7 @@ Expected result:
 
     ARM-SecNet documentation and evidence validation passed.
 
-This is the current documentation/evidence result: 19 original V1 checks, the Lab 03 guide
+This records the current documentation/evidence result: 19 original V1 checks, the Lab 03 guide
 and runtime record, and eight Lab 03 screenshots. The V1.0 tag's 19-check result and
 documentation MVP claim remain unchanged. File-presence checks do not rerun the VM workflow.
 
@@ -99,14 +99,14 @@ Mention that the project avoids malware, credential theft, phishing, attacking p
 
 Open docs/topology.md.
 
-Explain the V1 topology:
+Explain the historical V1 topology:
 
     Apple Silicon Mac
     -> UTM
     -> ARM64 Linux VM
     -> defensive Linux and network investigation labs
 
-Mention that V1 uses UTM Shared/NAT networking for safety and simplicity.
+Mention that this V1 topology uses UTM Shared/NAT networking for safety and simplicity.
 
 ### Step 4: Show Setup Guides
 
@@ -177,17 +177,17 @@ In V1, I focused on building a clean foundation instead of adding too many advan
 
 The project is useful because many cybersecurity learning resources are still x86-focused, while Apple Silicon users need clearer ARM64-compatible guidance.
 
-## 8. Current Limitations
+## 8. Historical V1.0 Limitations
 
-ARM-SecNet V1 is still an early version.
+The V1.0 documentation MVP is the historical starting point. The published V1.1.0 release also documents optional Lab 03, using the separate SentinelLite AI repository.
 
 Current limitations:
 
-- only two labs are included
+- the historical V1.0 documentation MVP includes two labs; published V1.1.0 documents three, with Lab 03 optional
 - the project is documentation-focused
 - V1 uses one ARM64 Linux VM
 - V1 does not include a packet capture lab
-- SentinelLite AI is outside the V1 scope
+- SentinelLite AI is outside the historical V1.0 scope
 - the current screenshots come from one tested Ubuntu ARM64 VM
 
 These limitations are acceptable for V1 because the goal was to build a safe and tested foundation first.
@@ -217,17 +217,20 @@ Keep the V1.0 demonstration above as the documentation MVP. Then show
 as part of the published
 [ARM-SecNet V1.1.0 SentinelLite Dashboard Lab release](https://github.com/kavisara-samarakoon/arm-secnet/releases/tag/v1.1.0-sentinellite-dashboard-lab),
 with [recorded runtime evidence](../evidence/v1.1-sentinellite-dashboard.md) from one Ubuntu
-ARM64 VM. This evidence does not establish universal ARM64 compatibility.
+26.04 LTS aarch64 VM, using SentinelLite source commit
+`d1775f0ca09d714f5ed9d681af90f216c1c39e8e`. This evidence does not validate the exact
+v1.2.0-beta wheel or establish broad ARM64 compatibility.
 
 Explain the relationship: ARM-SecNet provides the ARM64 lab VM; SentinelLite AI supplies
 the optional local defensive CLI. They remain separate repositories with no runtime dependency.
 
-Prepare SentinelLite inside the VM using either Lab 03 install path: the published
+For a new run, Lab 03 offers the published
 [SentinelLite AI v1.2.0-beta GitHub pre-release](https://github.com/kavisara-samarakoon/sentinellite-ai/releases/tag/v1.2.0-beta)
-wheel for repeat validation, or source at the `v1.2.0-beta` release tag for development and
-provenance. SentinelLite v1.2.0-beta includes `doctor`, `demo`, and `dashboard export`.
+wheel or source at the `v1.2.0-beta` release tag. The existing evidence does not validate
+the exact release wheel. SentinelLite v1.2.0-beta includes `doctor`, `demo`, and
+`dashboard export`.
 
-The existing evidence was recorded before publication using source commit
+The historical evidence was recorded before publication using source commit
 `d1775f0ca09d714f5ed9d681af90f216c1c39e8e`, with CLI version `SentinelLite AI v1.1.0-beta`.
 Those screenshots validate that earlier source run only. An exact v1.2.0-beta release-wheel
 VM validation claim requires a new run with separately recorded evidence.
