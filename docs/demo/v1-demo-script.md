@@ -73,11 +73,14 @@ Expected result:
     Warnings: 0
     Failed:  0
 
+    SHA-256 verified: 13/13
+
     ARM-SecNet documentation and evidence validation passed.
 
 This records the current documentation/evidence result: 19 original V1 checks, the Lab 03 guide
 and runtime record, and eight Lab 03 screenshots. The V1.0 tag's 19-check result and
-documentation MVP claim remain unchanged. File-presence checks do not rerun the VM workflow.
+documentation MVP claim remain unchanged. The validator also checks all 13 historical
+screenshot hashes against the manifest. These repository checks do not rerun the VM workflow.
 
 ## 6. Suggested Demo Flow
 
@@ -164,8 +167,8 @@ Run:
     bash scripts/validate-lab.sh
 
 Explain that the validation script checks whether required V1 files and evidence files,
-plus the V1.1 lab guide, runtime record and eight screenshots, exist. It does not run SentinelLite or validate
-the new VM workflow.
+plus the V1.1 lab guide, runtime record and eight screenshots, exist. It also verifies
+the 13 historical screenshot hashes. It does not run SentinelLite or validate the VM workflow.
 
 ## 7. Short Explanation to Say During Demo
 

@@ -98,9 +98,9 @@ for one Ubuntu 26.04 LTS aarch64 VM using SentinelLite source commit
 limited to that VM and source commit. It does not validate the exact v1.2.0-beta release
 wheel or establish universal ARM64 compatibility. New runs require separate evidence.
 
-GitHub Actions runs the 29 documentation/evidence file-presence checks and
-`git diff --check` on pull requests and pushes to `main`. It does not install SentinelLite
-or execute the VM workflow.
+GitHub Actions runs 29 documentation and evidence file-presence checks, verifies all
+13 historical screenshot hashes, and checks the committed change range for whitespace on
+pull requests and pushes to `main`. It does not install SentinelLite or execute the VM workflow.
 
 ## Learning Goals
 

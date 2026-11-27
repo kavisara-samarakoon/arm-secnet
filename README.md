@@ -336,32 +336,15 @@ Open the HTML file manually in a browser to view the local static dashboard.
 
 ## Validation
 
-Run the validation script:
+Run `bash scripts/validate-lab.sh` from the repository root. A passing run
+reports 29 required files present and 13 of 13 historical screenshot hashes verified.
+The validator checks repository files and screenshot integrity. It does not install
+or run SentinelLite or perform a fresh ARM64 VM validation.
 
-```bash
-bash scripts/validate-lab.sh
-```
-
-Expected result:
-
-```text
-Passed:  29
-Warnings: 0
-Failed:  0
-
-ARM-SecNet documentation and evidence validation passed.
-```
-
-The validation script checks documentation and evidence file presence. It does not install SentinelLite, run SentinelLite, or perform a fresh ARM64 VM validation.
-
-GitHub Actions also runs:
-
-```bash
-bash scripts/validate-lab.sh
-git diff --check
-```
-
-on pull requests and pushes to `main`.
+GitHub Actions runs the validator and checks the committed change range for
+whitespace on pull requests and pushes to `main`. See
+[Testing Before Commit](CONTRIBUTING.md#testing-before-commit) for local checks
+and comparison details.
 
 ---
 
